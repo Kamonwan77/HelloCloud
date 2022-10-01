@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Date
-import psycopg2 
-from psycopg2 import Error
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:HESadn49621@node36959-kamonwan.proen.app.ruk-com.cloud:5432/testdb'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:HESadn49621@node36959-kamonwan.proen.app.ruk-com.cloud:11261/testdb'
 app.config['SQLALCHEMY-TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
