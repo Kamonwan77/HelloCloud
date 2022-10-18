@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, CHAR, VARCHAR, Integer, String, Text, DateTime, Float, Boolean, PickleType
 
 Base = declarative_base()
-db_uri = 'sqlite:///hw2.sqlite3'
+db_uri = 'sqlite:///work.sqlite3'
 engine = create_engine(db_uri, echo=False)
 
 class Students(Base):
@@ -60,6 +60,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
+
 user1 = Students(
     student_id ='6406022630016',
     f_name='Kamonwan',
@@ -67,14 +68,12 @@ user1 = Students(
     e_mail ='s6406022630016@email.kmutnb.ac.th'
 )
 
-
 user2 = Students(
     student_id ='6406022620061',
     f_name='Mathawee',
     l_name='Robkob',
     e_mail ='s6406022620061@email.kmutnb.ac.th'
 )
-
 
 user3 = Students(
     student_id ='6406022610058',
@@ -84,12 +83,13 @@ user3 = Students(
 )
 
 
+
 regis1 = Registration(
     student_id ='6406022630016',
     subject_id='060233205',
     year='2565',
     semester ='1',
-    grade = 'C+'
+    grade = 'A'
 )
 
 regis2 = Registration(
@@ -97,14 +97,11 @@ regis2 = Registration(
     subject_id='060233113',
     year='2565',
     semester ='1',
-    grade = 'B'
+    grade = 'C+'
 )
 
-
-
-#ปาม
 regis3 = Registration(
-    student_id ='6406022620088',
+    student_id ='6406022620061',
     subject_id='060233205',
     year='2565',
     semester ='1',
@@ -112,18 +109,15 @@ regis3 = Registration(
 )
 
 regis4 = Registration(
-    student_id ='6406022620088',
+    student_id ='6406022620061',
     subject_id='060233113',
     year='2565',
     semester ='1',
-    grade = 'B'
+    grade = 'B+'
 )
 
-
-
-#เฟิน
 regis5 = Registration(
-    student_id ='6406022620061',
+    student_id ='6406022610058',
     subject_id='060233205',
     year='2565',
     semester ='1',
@@ -131,7 +125,7 @@ regis5 = Registration(
 )
 
 regis6 = Registration(
-    student_id ='6406022620061',
+    student_id ='6406022610058',
     subject_id='060233113',
     year='2565',
     semester ='1',
@@ -139,22 +133,11 @@ regis6 = Registration(
 )
 
 
+sub1 = Subjects(subject_id ='060233205',subject_name='ADVANCED NETWORK AND PROTOCOL',credit='3',teacher_id ='KNM')
+sub2 = Subjects(subject_id ='060233113',subject_name='ADVANCED COMPUTER PROGRAMMING',credit='1',teacher_id ='AMK')
 
+Tea1 = Teacher(teacher_id='KNM',f_name='Khanista',l_name='Namee', e_mail='Khanista@gmail.com')
+Tea2 = Teacher(teacher_id='AMK',f_name='Anirach',l_name='Mingkhwan',e_mail='Anirach@gmail.com')
 
-subject1 = Subjects(subject_id ='060233113', subject_name='ADVANCED COMPUTER PROGRAMMING', credit='3',  teacher_id ='AMK')
-subject2 = Subjects(subject_id ='060233205', subject_name='ADVANCED NETWORK AND PROTOCOL', credit='1', teacher_id ='KNM')
-
-Teacher1 = Teacher(teacher_id='AMK',f_name='Anirach', 
-                    l_name='Mingkhwan',e_mail='Anirach@gmail.com')
-
-                    
-Teacher2 = Teacher(teacher_id='KMN',f_name='Khanista', 
-                    l_name='Namee',e_mail='Khanista@gmail.com')
-
-
-
-session.add_all([user1,user2,user3,regis1, regis2, regis3, regis4, regis5, regis6 ,subject1 ,subject2, \
-Teacher1, Teacher2])
-
-
+session.add_all([user1,user2,user3,regis1, regis2, regis3, regis4, regis5, regis6, sub1 ,sub2, Tea1,Tea2])
 session.commit()
