@@ -42,7 +42,7 @@ class Subjects(Base):
             self.subject_name, self.credit , self.teacher_id)
 
 class Teacher(Base):
-    __tablename__ = 'Teachers' 
+    __tablename__ = 'Teacher' 
     teacher_id = Column(String(3),primary_key=True, nullable=True)
     f_name = Column(String(50), nullable=True)
     l_name = Column(String(30), nullable=True)
@@ -59,80 +59,93 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+
+
 user1 = Students(
-    student_id ='6406022620070',
-    f_name='Rawiporn',
-    l_name='Suamsiri',
-    e_mail ='6406022620070@kmutnb.ac.th'
+    student_id ='6406022630016',
+    f_name='Kamonwan',
+    l_name='Janmanee',
+    e_mail ='s6406022630016@email.kmutnb.ac.th'
 )
 
 user2 = Students(
-    student_id ='6406022620088',
-    f_name='Puntita',
-    l_name='Chaungchawna',
-    e_mail ='6406022620088@kmutnb.ac.th'
+    student_id ='6406022620061',
+    f_name='Mathawee',
+    l_name='Robkob',
+    e_mail ='s6406022620061@email.kmutnb.ac.th'
 )
 
 user3 = Students(
-    student_id ='6406022620061',
-    f_name='Mathawee',
-    l_name='Robkhob',
-    e_mail ='6406022620061@kmutnb.ac.th'
+    student_id ='6406022610058',
+    f_name='Piyawan',
+    l_name='Nimpraprut',
+    e_mail ='s6406022610058@email.kmutnb.ac.th'
 )
 
+
+
 regis1 = Registration(
-    student_id ='6406022620070',
-    subject_id='060233113',
+    student_id ='6406022630016',
+    subject_id='060233205',
     year='2565',
     semester ='1',
     grade = 'A'
 )
 
-regis11 = Registration(
-    student_id ='6406022620070',
-    subject_id='060233201',
+regis2 = Registration(
+    student_id ='6406022630016',
+    subject_id='060233113',
     year='2565',
     semester ='1',
     grade = 'C+'
 )
 
-regis2 = Registration(
-    student_id ='6406022620088',
-    subject_id='060233113',
+regis3 = Registration(
+    student_id ='6406022620061',
+    subject_id='060233205',
     year='2565',
     semester ='1',
     grade = 'A'
 )
 
-regis22 = Registration(
-    student_id ='6406022620088',
-    subject_id='060233201',
+regis4 = Registration(
+    student_id ='6406022620061',
+    subject_id='060233113',
     year='2565',
     semester ='1',
     grade = 'B+'
 )
 
-regis3 = Registration(
-    student_id ='6406022620061',
-    subject_id='060233113',
+regis5 = Registration(
+    student_id ='6406022610058',
+    subject_id='060233205',
     year='2565',
     semester ='1',
     grade = 'B'
 )
 
-regis33 = Registration(
-    student_id ='6406022620061',
-    subject_id='060233201',
+regis6 = Registration(
+    student_id ='6406022610058',
+    subject_id='060233113',
     year='2565',
     semester ='1',
     grade = 'C'
 )
-sub1 = Subjects(subject_id ='060233113',subject_name='ADVANCED COMPUTER PROGRAMMIN',credit='3',teacher_id ='AMK')
-sub2 = Subjects(subject_id ='060233201',subject_name='NETWORK ENGINEERING LABORATO',credit='1',teacher_id ='WKN')
 
-Tea1 = Teacher(teacher_id='AMK',f_name='Anirach',l_name='Mingkhwan',e_mail='Anirach@gmail.com')
-Tea2 = Teacher(teacher_id='WKN',f_name='Watcharachai',l_name='Kongsiriwattana',e_mail='Watcharachai@gmail.com')
 
-session.add_all([user1,user2,user3,regis1, regis11, regis2, regis22, regis3, regis33,sub1 ,sub2,Tea1,Tea2])
+sub1 = Subjects(subject_id ='060233205',subject_name='Advance network and protocol',credit='3',teacher_id ='KNM')
+sub2 = Subjects(subject_id ='060233113',subject_name='Advance Computer Programming',credit='1',teacher_id ='AMK')
+
+Tea1 = Teacher(teacher_id='KNM',
+                f_name='Khanista',
+                l_name='Namee', 
+                e_mail='Khanista@gmail.com')
+
+
+Tea2 = Teacher(teacher_id='AMK',
+                f_name='Anirach',
+                l_name='Mingkhwan',
+                e_mail='Anirach@gmail.com')
+
+session.add_all([user1,user2,user3,regis1, regis2, regis3, regis4, regis5, regis6, sub1 ,sub2, Tea1,Tea2])
 session.commit()
-print(user1,user2,user3,regis1, regis11, regis2, regis22, regis3, regis33,sub1 ,sub2,Tea1,Tea2)

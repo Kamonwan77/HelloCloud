@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-
+   
     <table border="1" width="90%" align="center">
         <tr bgcolor="pink">
-            <th>student_id</th>
-            <th>f_name</th>
-            <th>l_name</th>
-            <th>subject_id</th>
-            <th>subject_name</th>
+            <th>student-id</th>
+            <th>student-f_name</th>
+            <th>student-l_name</th>
+            <th>subject-id</th>
+            <th>subject-name</th>
             <th>grade</th>
-            <th>f_name</th>
-            <th>l_name</th>
+            <th>teacher-f_name</th>
+            <th>teacher-l_name</th>
         </tr>
         {% for row in test %}
         <tr>
@@ -30,9 +30,7 @@
           <td>{{ row[6] }}</td>
           <td>{{ row[7] }}</td>
         </tr>
-    {% endfor %}
-    </table>
-
-    
+      {% endfor %}
+      </table>
 </body>
 </html>
