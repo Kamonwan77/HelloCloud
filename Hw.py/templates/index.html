@@ -5,118 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-   
-   
-   <style>
-        body {padding: 0px; margin: 0;
-                    font-stretch: normal}
-
-        th {  color: white; font-size: 20; background-color: #039be5;}
-
-        td { color: black; font-size: 9;}
- 
-
-        th, td {text-align: left; padding: 8px;}
-      
-        table {
-            
-                border-collapse: collapse;  }
-
-                tr:nth-child(even) {background-color: #d3d3d3;}
-                
-                table {position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        border-collapse: collapse;
-                        width: 800px;
-                        height: 100px;}
-                     
-                        
-    </style>
 </head>
 <body>
-    <table >
-        
-        <tr>
-            <th>Student_id</th>
-            <th>Student_f_name</th>
-            <th>Student_l_name</th>
-            <th>Subject_id</th>
-            <th>Subject_name</th>
-            <th>Grade</th>
-            <th>Teacher_f_name</th>
-            <th>Teacher_l_name</th>
-        </tr><br>
-        <tr>
-            <td>6406022630016</td>
-            <td>Kamonwan</td>
-            <td>Janmanee</td>
-            <td>060233205</td>
-            <td>ADVANCED NETWORK AND PROTOCOL</td>
-            <td>B+</td>
-            <td>Khanista</td>
-            <td>Namee</td>
+    <h2><center>StudentsKMUTNB</center></h2>
+    <table border="1" width="90%" align="center">
+        <tr bgcolor="pink">
+            <th>student-id</th>
+            <th>student-f_name</th>
+            <th>student-l_name</th>
+            <th>subject-id</th>
+            <th>subject-name</th>
+            <th>grade</th>
+            <th>teacher-f_name</th>
+            <th>teacher-l_name</th>
         </tr>
+        {% for row in test %}
         <tr>
-            <td>6406022630016</td>
-            <td>Kamonwan</td>
-            <td>Janmanee</td>
-            <td>060233113</td>
-            <td>ADVANCED COMPUTER PROGRAMMING</td>
-            <td>B</td>
-            <td>Anirach</td>
-            <td>Mingkhwan</td>
-        </tr> 
-        
-        
-        
-        <tr>
-            <td>6406022620061</td>
-            <td>Mathawee</td>
-            <td>Robkob</td>
-            <td>060233205</td>
-            <td>ADVANCED NETWORK AND PROTOCOL</td>
-            <td><A></A></td>
-            <td>Khanista</td>
-            <td>Namee</td>
-        </tr> 
-        <tr>
-            <td>6406022620061</td>
-            <td>Mathawee</td>
-            <td>Robkob</td>
-            <td>060233113</td>
-            <td>ADVANCED COMPUTER PROGRAMMING</td>
-            <td>B+</td>
-            <td>Anirach</td>
-            <td>Mingkhwan</td>
-        </tr> 
-        
-        
-        
-        <tr>
-            <td>6406022610058</td>
-            <td>Piyawan</td>
-            <td>Nimpraprut</td>
-            <td>060233205</td>
-            <td>ADVANCED NETWORK AND PROTOCOL</td>
-            <td>B</td>
-            <td>Khanista</td>
-            <td>Namee</td>
-        </tr> 
-        <tr>
-            <td>6406022610058</td>
-            <td>Piyawan</td>
-            <td>Nimpraprut</td>
-            <td>060233113</td>
-            <td>ADVANCED COMPUTER PROGRAMMING</td>
-            <td>C</td>
-            <td>Anirach</td>
-            <td>Mingkhwan</td>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
         </tr>
-    </table>
-
-
+      {% endfor %}
+      </table>
 </body>
 </html>
