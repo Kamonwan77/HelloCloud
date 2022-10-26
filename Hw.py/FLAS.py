@@ -10,7 +10,7 @@ def index():
     cur = c.cursor()
     # cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name , Subjects.sub_id FROM Students, Subjects")
     cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name ,Subjects.subject_id , Subjects.subject_name\
-            ,Registration.grade , Teacher.f_name , Teacher.l_name from Students\
+            ,Registration.grade , Teachers.f_name , Teachers.l_name from Students\
             JOIN Registration\
             on Students.student_id = Registration.student_id\
             JOIN Subjects\
