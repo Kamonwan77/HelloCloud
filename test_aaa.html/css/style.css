@@ -19,20 +19,12 @@ th:first-child{border-top-left-radius: 15px;}
 th:last-child{border-top-right-radius: 15px;}
 
 
-tr:nth-child(even) {
-    background-color: white;
 
-}
-
-tr:nth-child(even) :hover{
-    background-color: #D3D3D3;
-    
-}
 
   
 table { position: absolute;
         left: 50%;
-        top: 50%;
+        top: 100%;
         transform: translate(-50%, -50%);
         border-collapse: collapse ;        
         width: 1400px;
