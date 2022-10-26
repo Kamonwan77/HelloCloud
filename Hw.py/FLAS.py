@@ -15,7 +15,7 @@ def index():
             on Students.student_id = Registration.student_id\
             JOIN Subjects\
             on Registration.subject_id = Subjects.subject_id\
-            JOIN Teacher\
+            JOIN Teachers\
             on Subjects.teacher_id = Teacher.teacher_id\
             ;")
 

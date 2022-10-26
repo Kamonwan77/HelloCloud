@@ -42,7 +42,7 @@ class Subjects(Base):
             self.subject_name, self.credit , self.teacher_id)
 
 class Teacher(Base):
-    __tablename__ = 'Teachers' 
+    __tablename__ = 'Teacher' 
     teacher_id = Column(String(3),primary_key=True, nullable=True)
     f_name = Column(String(50), nullable=True)
     l_name = Column(String(30), nullable=True)
