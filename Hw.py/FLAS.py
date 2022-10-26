@@ -16,7 +16,8 @@ def index():
             JOIN Subjects\
             on Registration.subject_id = Subjects.subject_id\
             JOIN Teacher\
-            on Subjects.teacher_id = Teacher.teacher_id \;")
+            on Subjects.teacher_id = Teacher.teacher_id\
+            ;")
 
 
     test = cur.fetchall()
