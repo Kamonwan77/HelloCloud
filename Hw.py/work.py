@@ -128,7 +128,7 @@ regis33 = Registration(
     grade = 'C'
 )
 sub1 = Subjects(subject_id ='060233205',subject_name='Advance network and protocol',credit='3',teacher_id ='KNM')
-sub2 = Subjects(subject_id ='060233113',subject_name='Advance Computer Programming',credit='1',teacher_id ='AMK')
+sub2 = Subjects(subject_id ='060233113',subject_name='Advance Computer Programming',credit='3',teacher_id ='AMK')
 
 Tea1 = Teacher(teacher_id='KNM',f_name='Khanista',l_name='Namee',e_mail='Khanista@gmail.com')
 Tea2 = Teacher(teacher_id='AMK',f_name='Anirach',l_name='Mingkhwan',e_mail='Anirach@gmail.com')
