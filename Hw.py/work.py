@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker , relationship , backref
 
 
 Base = declarative_base()
-engine = sqlalchemy.create_engine('postgresql://webadmin:HESadn49621@node36959-kamonwan.proen.app.ruk-com.cloud:11261/hw2')
+engine = sqlalchemy.create_engine('postgresql://webadmin:HESadn49621@node36959-kamonwan.proen.app.ruk-com.cloud:5432/hw2')
 
 class Students(Base):
     __tablename__ = 'Students' 
