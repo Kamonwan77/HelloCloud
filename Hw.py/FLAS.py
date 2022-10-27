@@ -1,26 +1,16 @@
-import sqlite3 
-from flask import Flask,render_template
-from flask_sqlalchemy import SQLAlchemy
 
+from flask import Flask,render_template,request
+from flask_sqlalchemy import SQLAlchemy 
+from work import Students ,Registration,Subjects,Teacher, session
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    c = sqlite3.connect('work.sqlite3')
-    cur = c.cursor()
-    # cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name , Subjects.sub_id FROM Students, Subjects")
-    cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name\
-        , Subjects.subject_id , Subjects.subject_name\
-        ,Registration.grade , Teachers.f_name , Teachers.l_name from Students\
-        JOIN Registration\
-        on Students.student_id = Registration.student_id\
-        JOIN Subjects\
-        on Registration.subject_id = Subjects.subject_id\
-        JOIN Teachers\
-        on Subjects.teacher_id = Teachers.teacher_id\
-        ;")
-    test = cur.fetchall()
-    return render_template("index.html", test=test)
+    data = session.query(Students.student_id,Students.S_f_name,Students.S_l_name,Students.S_e_mail,Registration.sub_id,Subjects.subject_name,Registration.grade,
+    Teacher.T_f_name,Teacher.T_l_name)\
+        .join(Registration,Students.student_id == Registration.student_id).join(Subjects,Registration.sub_id == Subjects.sub_id)\
+        .join(Teacher,Subjects.teacher_id == Teacher.teacher_id)
+    return render_template('index.html',TEST = data) 
 
 
 if __name__ == "__main__":
