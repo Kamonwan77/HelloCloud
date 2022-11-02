@@ -8,8 +8,8 @@ def index():
     connection = psycopg2.connect(user='webadmin',
                                     password='HESadn49621',
                                     host='node36959-kamonwan.proen.app.ruk-com.cloud',
-                                    port='11261',
-                                    database='postgres')
+                                    port='5432',
+                                    database='project')
 
                                     
     cursor = connection.cursor()
